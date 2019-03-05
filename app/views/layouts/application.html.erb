@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+ 
+  <head>
+    <title>Chatroom</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body style="background-color:#e3f2fd" ;>
+      <header>
+        <%= (link_to 'Logout', logout_url) if current_user %> 
+      </header>
+  
+
+    <%= yield %>
+  </body>
+  
+</html>

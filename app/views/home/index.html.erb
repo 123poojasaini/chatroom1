@@ -1,0 +1,15 @@
+<div class="container"
+<%= link_to 'Edit', edit_user_path(@user) %>
+<h1>Details</h1>
+<table class="table table-condensed">
+
+  <tbody>
+      <tr><td>User Name</td>><td><%= @user.username %></td></tr>
+      <tr><td>First Name</td><td><%= @user.fname %></td></tr>
+      <tr><td>Last Name</td><td><%= @user.lname %></td></tr>
+      <tr><td>Email:</td><td><%= @user.email %></td></tr>
+      <tr><td>Password</td><td><%= @user.password %></td></tr>
+  </tbody>
+</table>
+</div>
+

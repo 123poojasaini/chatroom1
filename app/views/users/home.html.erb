@@ -1,0 +1,42 @@
+<div class="container"   >
+<html>
+<head>
+<script>
+$(document).ready(function(){  $('[data-toggle="popover"]').popover(); });
+</script>
+
+</head>
+
+<body>
+<h3 style="color: Red">
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end %></h3>
+<div class="row">
+<div class="col-sm-10" >
+  <table class="table table-condensed">
+    <tbody>
+      <tr><td>User Name</td><td><%= @user.username %></td></tr>
+      <tr><td>First Name</td><td><%= @user.fname %></td></tr>
+      <tr><td>Last Name</td><td><%= @user.lname %></td></tr>
+      <tr><td>Email:</td><td><%= @user.email %></td></tr>
+      <tr><td>Password</td><td><%= @user.password %></td></tr>
+    </tbody>
+  <%= link_to 'Edit', edit_user_path(@user) %>
+  </table>
+  </div>
+  <div class="col-sm-2 border border-primary">
+    Total Friends: <%= User.all.count%>
+    <ul class="nav nav-pills nav-stacked" style="height: 90%;  width: 100%;overflow-y: scroll; ">
+    <%User.all.each do |user|%>
+      <li class="nav-item"> 
+      <a class="nav-link" href="#" data-toggle="popover" title="Details:" data-trigger="focus"  data-content="Email: <%= user.email%>"><%=user.fname+user.lname%></a>
+      </li>
+    <%end%>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>
